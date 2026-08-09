@@ -28,9 +28,14 @@ Generated UI source belongs in `src/shared/ui`. Add components only when a real 
 
 ## First exercise
 
-Create a responsive fictional profile page without copying an existing product. Start with static typed props, then add synthetic async data, loading, empty, and error states.
+Open `/my-page` to study a responsive fictional profile page. The feature uses a typed Promise-based mock query with loading, success, error, and retry states. Replacing that query boundary with a real API adapter should not require presentation-component changes.
+
+Suggested follow-up exercises:
+
+1. Add a profile edit form with validation.
+2. Replace the mock query with an HTTP adapter.
+3. Move server-state handling to TanStack Query and compare the code.
 
 ## Publication safety
 
 Before every push, verify that the repository contains no employer code, names, logos, screenshots, UI copy, API paths, schemas, credentials, hostnames, business rules, customer data, or Git history.
-# vue-to-react-migration
