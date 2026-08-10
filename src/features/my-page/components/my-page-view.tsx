@@ -1,3 +1,5 @@
+import { useState } from "react"
+import type { Profile } from "../model/profile"
 import { ActivitySummary } from "./activity-summary"
 import { ProfileCard } from "./profile-card"
 import { ProfileError } from "./profile-error"
@@ -11,6 +13,7 @@ interface MyPageViewProps {
 
 export function MyPageView({ query }: MyPageViewProps) {
   const { data, error, isLoading, retry } = useProfile(query)
+  const [editedProfile, setEditedProfile] = useState<Profile | null>(null)
 
   return (
     <main className="bg-muted/35 min-h-screen px-4 py-10 sm:px-6 lg:px-8">
@@ -33,7 +36,11 @@ export function MyPageView({ query }: MyPageViewProps) {
         ) : null}
         {!isLoading && !error && data ? (
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(16rem,1fr)]">
-            <ProfileCard profile={data.profile} bp={data.bp} />
+            <ProfileCard
+              profile={editedProfile ?? data?.profile}
+              bp={data.bp}
+              editProfile={setEditedProfile}
+            />
             <ActivitySummary activity={data.activity} />
           </div>
         ) : null}

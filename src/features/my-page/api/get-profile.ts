@@ -1,4 +1,4 @@
-import type { ProfileOverview } from "../model/profile"
+import type { ProfileOverview, CommonCode } from "../model/profile"
 
 interface GetProfileOptions {
   delay?: number
@@ -10,7 +10,9 @@ const profileOverview: ProfileOverview = {
     name: "Alex Kim",
     email: "alex@orbitdesk.dev",
     role: "Product Designer",
+    roleCode: "PD",
     team: "Workspace Experience",
+    teamCode: "WE",
     organization: "Orbit Desk",
     status: "active",
     initials: "AK",
@@ -31,6 +33,60 @@ const profileOverview: ProfileOverview = {
     shopUrl: "https://orbitdesk.dev",
   },
 }
+
+export const jobCodesList: CommonCode[] = [
+  {
+    code: "PD",
+    name: "Product Designer",
+  },
+  {
+    code: "PM",
+    name: "Product Manager",
+  },
+  {
+    code: "FE",
+    name: "Frontend Engineer",
+  },
+  {
+    code: "BE",
+    name: "Backend Engineer",
+  },
+  {
+    code: "QA",
+    name: "Quality Assurance",
+  },
+  {
+    code: "DE",
+    name: "Developer Experience",
+  },
+]
+
+export const teamCodesList: CommonCode[] = [
+  {
+    code: "WE",
+    name: "Workspace Experience",
+  },
+  {
+    code: "CS",
+    name: "Customer Success",
+  },
+  {
+    code: "OPS",
+    name: "Operations",
+  },
+  {
+    code: "PMO",
+    name: "Project Management Office",
+  },
+  {
+    code: "SALES",
+    name: "Sales",
+  },
+  {
+    code: "R&D",
+    name: "Research and Development",
+  },
+]
 
 export function getProfile({
   delay = 600,

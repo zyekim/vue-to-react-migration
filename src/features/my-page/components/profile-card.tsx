@@ -1,5 +1,5 @@
 import { Building2, BriefcaseBusiness, Mail, Users } from "lucide-react"
-
+import { Button } from "@/shared/ui/button"
 import type { Profile, Bp } from "../model/profile"
 import { Avatar, AvatarFallback } from "@/shared/ui/avatar"
 import { Badge } from "@/shared/ui/badge"
@@ -11,10 +11,14 @@ import {
   CardTitle,
 } from "@/shared/ui/card"
 import { BPDialog } from "./bp-dialog"
+import { ProfileEditDialog } from "./profile-edit-dialog"
+import { PwdChangeDialog } from "./pwd-change-dialog"
+import { useState } from "react"
 
 interface ProfileCardProps {
   profile: Profile
   bp: Bp
+  editProfile: (profile: Profile) => void
 }
 
 const profileDetails = [
@@ -24,7 +28,7 @@ const profileDetails = [
   { key: "organization", label: "조직", icon: Building2 },
 ] as const
 
-export function ProfileCard({ profile, bp }: ProfileCardProps) {
+export function ProfileCard({ profile, bp, editProfile }: ProfileCardProps) {
   return (
     <Card className="h-full shadow-sm">
       <CardHeader className="border-b">
@@ -45,9 +49,15 @@ export function ProfileCard({ profile, bp }: ProfileCardProps) {
         </div>
       </CardHeader>
       <CardContent>
-        <CardTitle>
-          <h2>프로필 정보</h2>
-        </CardTitle>
+        <div className="flex items-center justify-between">
+          <CardTitle>
+            <h2>프로필 정보</h2>
+          </CardTitle>
+          <div className="flex items-center gap-1">
+            <ProfileEditDialog profile={profile} onSave={editProfile} />
+            <PwdChangeDialog></PwdChangeDialog>
+          </div>
+        </div>
         <CardDescription className="mt-1">
           Orbit Desk에서 사용하는 기본 계정 정보입니다.
         </CardDescription>
