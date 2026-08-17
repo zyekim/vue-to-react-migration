@@ -13,5 +13,30 @@ describe("app router", () => {
     render(<RouterProvider router={router} />)
 
     expect(screen.getByRole("heading", { name: "My Page" })).toBeInTheDocument()
+    expect(
+      screen.queryByRole("navigation", { name: "주요 메뉴" }),
+    ).not.toBeInTheDocument()
+  })
+
+  it("renders the domain layout at /orders", () => {
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/orders"],
+    })
+
+    render(<RouterProvider router={router} />)
+
+    expect(
+      screen.getByRole("heading", { name: "주문 목록" }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole("navigation", { name: "주요 메뉴" }),
+    ).toBeInTheDocument()
+    expect(screen.getByRole("link", { name: "주문 목록" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    )
+    expect(
+      screen.getByRole("link", { name: "Alex Kim 내 정보 보기" }),
+    ).toHaveAttribute("href", "/my-page")
   })
 })

@@ -21,7 +21,7 @@ describe("ProfileEditDialog", () => {
   it("disables saving and shows an error when the email is invalid", async () => {
     const user = userEvent.setup()
 
-    render(<ProfileEditDialog {...profile} />)
+    render(<ProfileEditDialog profile={profile} onSave={() => undefined} />)
 
     await user.click(screen.getByText("기본정보 수정"))
 

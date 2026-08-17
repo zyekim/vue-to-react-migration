@@ -1,5 +1,4 @@
 import { Building2, BriefcaseBusiness, Mail, Users } from "lucide-react"
-import { Button } from "@/shared/ui/button"
 import type { Profile, Bp } from "../model/profile"
 import { Avatar, AvatarFallback } from "@/shared/ui/avatar"
 import { Badge } from "@/shared/ui/badge"
@@ -13,7 +12,6 @@ import {
 import { BPDialog } from "./bp-dialog"
 import { ProfileEditDialog } from "./profile-edit-dialog"
 import { PwdChangeDialog } from "./pwd-change-dialog"
-import { useState } from "react"
 
 interface ProfileCardProps {
   profile: Profile
