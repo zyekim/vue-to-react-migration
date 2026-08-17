@@ -155,7 +155,7 @@ export function OrdersPage() {
   }
 
   return (
-    <section className="mx-auto w-full max-w-7xl space-y-6">
+    <section className="mx-auto w-full max-w-7xl space-y-4">
       <header>
         <p className="text-muted-foreground text-sm font-medium">Orders</p>
         <h1 className="mt-1 text-3xl font-semibold tracking-tight">

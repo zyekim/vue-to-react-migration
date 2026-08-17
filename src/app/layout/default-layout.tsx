@@ -46,7 +46,7 @@ export function DefaultLayout() {
         </div>
       </aside>
 
-      <main className="min-w-0 p-4 sm:p-6 lg:p-8">
+      <main className="min-w-0 p-2 sm:p-4 lg:p-6">
         <Outlet />
       </main>
     </div>

@@ -1,5 +1,5 @@
 import type { KeyboardEvent } from "react"
-
+import { cn } from "@/shared/lib/utils"
 import type { OrderStatus, OrderSummary } from "../model/order"
 import { Badge } from "@/shared/ui/badge"
 import {
@@ -50,6 +50,22 @@ export function OrderListTable({
       onSelect(orderId)
     }
   }
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case "pending":
+        return "text-yellow-600 bg-yellow-50"
+      case "paid":
+        return "text-green-600 bg-green-50"
+      case "preparing":
+        return "text-blue-600 bg-blue-50"
+      case "shipped":
+        return "text-purple-600 bg-purple-50"
+      case "cancelled":
+        return "text-red-600 bg-red-50"
+      default:
+        return ""
+    }
+  }
 
   return (
     <Table>
@@ -80,7 +96,12 @@ export function OrderListTable({
             </TableCell>
             <TableCell>{order.customerName}</TableCell>
             <TableCell>
-              <Badge variant="outline">{statusLabels[order.status]}</Badge>
+              <Badge
+                variant="outline"
+                className={cn(getStatusColor(order.status))}
+              >
+                {statusLabels[order.status]}
+              </Badge>
             </TableCell>
             <TableCell className="text-right">{order.itemCount}</TableCell>
             <TableCell className="text-right">{order.totalQuantity}</TableCell>
