@@ -1,6 +1,6 @@
-# React Ops Lab
+# React Learning Ops
 
-An independent React practice project for learning feature-oriented architecture and accessible admin UI. All names and data are fictional. This repository is not affiliated with any employer or commercial service.
+An independent learning repository for studying React fundamentals and migrating UI patterns and screens previously built with Vue to React. All names and data are fictional. This repository is not affiliated with any employer or commercial service.
 
 ## Commands
 
@@ -33,4 +33,3 @@ Create a responsive fictional profile page without copying an existing product. 
 ## Publication safety
 
 Before every push, verify that the repository contains no employer code, names, logos, screenshots, UI copy, API paths, schemas, credentials, hostnames, business rules, customer data, or Git history.
-# vue-to-react-migration
