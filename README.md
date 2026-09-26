@@ -1,6 +1,6 @@
-# React Ops Lab
+# React Learning Ops
 
-An independent React practice project for learning feature-oriented architecture and accessible admin UI. All names and data are fictional. This repository is not affiliated with any employer or commercial service.
+An independent learning repository for studying React fundamentals and migrating UI patterns and screens previously built with Vue to React. All names and data are fictional. This repository is not affiliated with any employer or commercial service.
 
 ## Commands
 
@@ -25,6 +25,15 @@ Generated UI source belongs in `src/shared/ui`. Add components only when a real 
 - `src/pages`: thin route entry points
 - `src/features`: business-facing feature modules
 - `src/shared`: reusable UI and framework-neutral utilities
+
+## Learning tracks
+
+This repository records React study in two connected tracks.
+
+- **Fundamentals** (`src/lessons`): props, state, events, derived values, and effects
+- **Applied UI** (`src/features`, `src/pages`): forms, dialogs, tables, pagination, routing, tests, and mocked API communication
+
+Small exercises stay intentionally simple. When a concept is understood, it is applied to a fictional admin screen instead of adding unnecessary abstractions.
 
 ## First exercise
 
