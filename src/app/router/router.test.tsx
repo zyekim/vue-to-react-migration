@@ -39,4 +39,19 @@ describe("app router", () => {
       screen.getByRole("link", { name: "Alex Kim 내 정보 보기" }),
     ).toHaveAttribute("href", "/my-page")
   })
+
+  it("renders fundamentals outside the domain layout", () => {
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/lessons"],
+    })
+
+    render(<RouterProvider router={router} />)
+
+    expect(
+      screen.getByRole("heading", { name: "React Fundamentals" }),
+    ).toBeInTheDocument()
+    expect(
+      screen.queryByRole("navigation", { name: "주요 메뉴" }),
+    ).not.toBeInTheDocument()
+  })
 })

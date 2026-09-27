@@ -30,10 +30,12 @@ Generated UI source belongs in `src/shared/ui`. Add components only when a real 
 
 This repository records React study in two connected tracks.
 
-- **Fundamentals** (`src/lessons`): props, state, events, derived values, and effects
+- **Fundamentals** (`/lessons`): controlled inputs, immutable updates, effects, custom hooks, composition, and context
 - **Applied UI** (`src/features`, `src/pages`): forms, dialogs, tables, pagination, routing, tests, and mocked API communication
 
 Small exercises stay intentionally simple. When a concept is understood, it is applied to a fictional admin screen instead of adding unnecessary abstractions.
+
+The fundamentals page consolidates the ongoing DAY 03–09 exercises from the separate rescue workspace. The original Vite scaffold and dependencies are intentionally not duplicated.
 
 ## First exercise
 
